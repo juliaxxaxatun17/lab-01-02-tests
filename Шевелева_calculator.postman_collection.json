@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "142ebf9f-e5df-44cd-9872-f1bc5d334402",
+		"name": "calculator",
+		"description": "A simple HTTP API for performing calculations using two numeric inputs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48602992",
+		"_collection_link": "https://juliaxxaxatun1-7-3666573.postman.co/workspace/fe3c7dd2-c466-438d-8e32-4409a5a839df/collection/48602992-142ebf9f-e5df-44cd-9872-f1bc5d334402?action=share&source=collection_link&creator=48602992"
+	},
+	"item": [
+		{
+			"name": "arithmetic",
+			"item": [
+				{
+					"name": "add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"15\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/add?a=10&b=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"add"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "10",
+									"description": "first number"
+								},
+								{
+									"key": "b",
+									"value": "5",
+									"description": "second number"
+								}
+							]
+						},
+						"description": "Adds two numbers"
+					},
+					"response": []
+				},
+				{
+					"name": "subtract",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"5\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/subtract?a=10&b=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"subtract"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "10",
+									"description": "first number"
+								},
+								{
+									"key": "b",
+									"value": "5",
+									"description": "second number"
+								}
+							]
+						},
+						"description": "Subtracts the second number from the first"
+					},
+					"response": []
+				},
+				{
+					"name": "multiply",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"50\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/multiply?a=10&b=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"multiply"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "10",
+									"description": "first number"
+								},
+								{
+									"key": "b",
+									"value": "5",
+									"description": "second number"
+								}
+							]
+						},
+						"description": "Multiplies two numbers"
+					},
+					"response": []
+				},
+				{
+					"name": "divide",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"2\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/divide?a=10&b=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"divide"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "10",
+									"description": "first number"
+								},
+								{
+									"key": "b",
+									"value": "5",
+									"description": "second number"
+								}
+							]
+						},
+						"description": "Divides two numbers"
+					},
+					"response": []
+				},
+				{
+					"name": "divide_0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"Division by zero\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/divide?a=10&b=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"divide"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "10",
+									"description": "first number"
+								},
+								{
+									"key": "b",
+									"value": "0",
+									"description": "second number"
+								}
+							]
+						},
+						"description": "Attempts to divide by zero"
+					},
+					"response": []
+				}
+			],
+			"description": "simple arithmetic operations"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		}
+	]
+}
